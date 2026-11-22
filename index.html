@@ -1,330 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Portfolio - Sandy Marrero Hernandez</title>
-    <meta name="description" content="Portfolio of Sandy Marrero Hernandez, a Software Engineering Student at the University of Puerto Rico, Mayaguez.">
-    <meta name="author" content="Sandy Marrero Hernandez">
-    <link rel="icon" type="image/png" href="assets/favicon.ico">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #e9ebee;
-            color: #1d2129;
-        }
-        .header {
-            background-color: #3b5998;
-            color: white;
-            padding: 10px;
-            text-align: center;
-            position: relative;
-        }
-        .menu-toggle {
-            display: none;
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            font-size: 1.5em;
-            cursor: pointer;
-        }
-        .menu {
-            background-color: #3b5998;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .menu a {
-            color: white;
-            margin: 5px 10px;
-            text-decoration: none;
-            padding: 10px;
-        }
-        .menu a:hover {
-            text-decoration: underline;
-        }
-        .container {
-            width: 90%;
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border: 1px solid #dfe3ee;
-            border-radius: 5px;
-        }
-        h1, h2, h3 {
-            color: #3b5998;
-        }
-        a {
-            color: #3b5998;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .section {
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #ccc;
-        }
-        .skills-list {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            padding: 0;
-            list-style-type: none;
-        }
-        .skills-list li {
-            font-weight: bold;
-        }
-        .experience-list, .projects-list {
-            list-style-type: none;
-            padding: 0;
-        }
-        .experience-list li {
-            margin-bottom: 10px;
-        }
-        .experience-list li strong {
-            display: block;
-            font-size: 1.1em;
-        }
-        .experience-list li p {
-            margin: 5px 0;
-            font-style: italic;
-        }
-        .projects-list {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-        }
-        .projects-list li {
-            text-align: center;
-        }
-        .projects-list img {
-            width: 100%;
-            border-radius: 5px;
-        }
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin: 0 auto;
-            display: block;
-        }
-        .profile-header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        @media print {
-            body {
-                background-color: white;
-                color: black;
-            }
-            .header, .menu, .footer {
-                background-color: white;
-                color: black;
-            }
-            a {
-                color: black;
-                text-decoration: none;
-            }
-            .container {
-                border: none;
-            }
-        }
-        @media (max-width: 600px) {
-            .menu {
-                display: none;
-                flex-direction: column;
-            }
-            .menu.active {
-                display: flex;
-            }
-            .menu a {
-                margin: 5px 0;
-                padding: 10px;
-                border-bottom: 1px solid #fff;
-            }
-            .menu-toggle {
-                display: block;
-            }
-            .container {
-                width: 95%;
-                padding: 10px;
-            }
-            .skills-list {
-                grid-template-columns: 1fr;
-            }
-            .projects-list {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sandy Marrero Hernández — Software Engineer</title>
+  <meta name="description" content="Portfolio and resume of Sandy Marrero Hernández, Software Engineer focused on iOS and Android mobile app development and full-stack engineering.">
+  <meta name="author" content="Sandy Marrero Hernández">
+  <meta name="theme-color" content="#3b5998">
+  <link rel="canonical" href="https://sandy-marrero.github.io/">
+  <link rel="icon" href="assets/favicon.ico">
+
+  <!-- Open Graph / Social Preview -->
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Sandy Marrero Hernández — Software Engineer">
+  <meta property="og:description" content="Software Engineer focused on iOS and Android mobile app development and full-stack engineering. Java, Kotlin, Swift, Objective-C, and C.">
+  <meta property="og:url" content="https://sandy-marrero.github.io/">
+  <meta property="og:image" content="https://sandy-marrero.github.io/assets/img/m.png">
+
+  <!-- Modern Typography: Plus Jakarta Sans + Inter + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Sandy Marrero Hernández",
+      "url": "https://sandy-marrero.github.io/",
+      "image": "https://sandy-marrero.github.io/assets/img/m.png",
+      "jobTitle": "Software Engineer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Google"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Puerto Rico, Mayagüez"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/sandy-marrero/",
+        "https://github.com/sandy-marrero"
+      ]
+    }
+  </script>
 </head>
 <body>
-    <div class="header">
-        <h1>_</h1>        
-        <div class="menu-toggle">&#9776;</div>
+  <!-- Sticky Heritage Blue Top Bar -->
+  <header class="topbar" role="banner">
+    <div class="topbar-inner">
+      <a class="brand-mark" href="#wall" aria-label="Sandy Marrero Hernández Home">
+        <span class="brand-badge" aria-hidden="true">sm</span>
+        <span class="brand-text">sandy.marrero</span>
+      </a>
+
+      <div class="search-wrap" id="search-wrap">
+        <label class="sr-only" for="profile-search">Search experience, skills, or projects</label>
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.3-4.3"></path>
+        </svg>
+        <input
+          type="search"
+          id="profile-search"
+          class="search-input"
+          placeholder="Search Java, Kotlin, Swift, Google..."
+          autocomplete="off"
+        >
+        <span class="search-kbd" aria-hidden="true">/</span>
+        <button type="button" class="search-clear" id="search-clear" aria-label="Clear search">&times;</button>
+      </div>
+
+      <nav class="topbar-actions" aria-label="Quick links">
+        <a class="topbar-link" id="topbar-github" href="https://github.com/sandy-marrero" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
+          <span>GitHub</span>
+        </a>
+        <a class="topbar-link" id="topbar-linkedin" href="https://www.linkedin.com/in/sandy-marrero/" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77Z"/></svg>
+          <span>LinkedIn</span>
+        </a>
+        <button type="button" class="topbar-link topbar-link--solid" data-print-resume aria-label="Print or Save Resume PDF">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          <span>Resume PDF</span>
+        </button>
+      </nav>
     </div>
-    <div class="menu">
-        <a href="#home">Home</a>
-        <a href="#about">Who is Sandy?</a>
-        <a href="#skills">Skills</a>
-        <a href="#resume">My Resume</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#experience">Experience</a>
-        <a href="#research">Research</a>
-        <a href="#volunteer">Volunteer</a>
-        <a href="#contact">Contact</a>
+  </header>
+
+  <main class="page-shell">
+    <!-- Classic Facebook-Inspired Profile Hero Card -->
+    <section class="profile-card" aria-label="Profile header">
+      <div class="profile-cover" aria-hidden="true"></div>
+
+      <div class="profile-identity">
+        <div class="profile-identity-left">
+          <div class="avatar-frame">
+            <img class="avatar-img" id="profile-avatar" src="assets/img/m.png" alt="Sandy Marrero Hernández" width="132" height="132">
+          </div>
+          <div class="identity-text">
+            <h1 class="identity-name" id="profile-name">Sandy Marrero Hernández</h1>
+            <p class="identity-headline" id="profile-headline">Software Engineer</p>
+            <div class="identity-badges" id="profile-badges"></div>
+          </div>
+        </div>
+
+        <div class="profile-cta-group">
+          <button type="button" class="btn btn--primary" id="btn-print-cta" data-print-resume>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Save / Print Resume
+          </button>
+          <a class="btn btn--secondary" id="btn-email-cta" href="mailto:sandy.marrero@upr.edu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+            Contact
+          </a>
+        </div>
+      </div>
+
+      <!-- Profile Navigation Tabs -->
+      <div class="profile-tabs" id="profile-tabs" role="tablist" aria-label="Profile sections">
+        <button type="button" class="tab-btn is-active" role="tab" aria-selected="true" data-tab="wall" id="tab-wall">
+          Wall
+        </button>
+        <button type="button" class="tab-btn" role="tab" aria-selected="false" data-tab="experience" id="tab-experience">
+          Experience <span class="tab-count" id="count-experience">4</span>
+        </button>
+        <button type="button" class="tab-btn" role="tab" aria-selected="false" data-tab="skills" id="tab-skills">
+          Skills <span class="tab-count" id="count-skills">10</span>
+        </button>
+        <button type="button" class="tab-btn" role="tab" aria-selected="false" data-tab="projects" id="tab-projects">
+          Projects <span class="tab-count" id="count-projects">2</span>
+        </button>
+        <button type="button" class="tab-btn" role="tab" aria-selected="false" data-tab="education" id="tab-education">
+          Education
+        </button>
+      </div>
+    </section>
+
+    <!-- Active Filter Indicator Banner -->
+    <div class="filter-banner" id="filter-banner" role="status" aria-live="polite">
+      <span id="filter-banner-text"></span>
+      <button type="button" class="filter-clear-btn" id="filter-clear-btn">Clear filter</button>
     </div>
-    <div class="container">
-        <div id="home" class="section profile-header">
-            <img src="assets/img/m.png" alt="Sandy Marrero Hernandez" class="profile-img">
-            <h2>Welcome to my Portfolio</h2>
-            <p>Software Engineering Student from the University Of Puerto Rico, Mayaguez</p>
-            <p><a href="#about">See More About Me</a></p>
+
+    <noscript>
+      <div class="fb-box" style="margin-bottom: 18px;">
+        <div class="fb-box-body">
+          <strong>Sandy Marrero Hernández</strong> — Software Engineer at Google focused on iOS and Android mobile app development and full-stack engineering. B.S. Computer Software Engineering, University of Puerto Rico, Mayagüez (Graduated May 2025). Visit <a href="https://www.linkedin.com/in/sandy-marrero/">LinkedIn</a> or <a href="https://github.com/sandy-marrero">GitHub</a>.
         </div>
-        <div id="about" class="section">
-            <h2>Who am I?</h2>
-            <p>I'm a sixth-year Software Engineering student at the University of Puerto Rico, Mayaguez. I'm passionate about technology, programming, arts and education. Currently working towards learning more about Android Development and Mobile Development.</p>
-            <p><a href="#skills">See Skills</a></p>
-        </div>
-        <div id="skills" class="section">
-            <h2>Skills</h2>
-            <ul class="skills-list">
-                <li>Java</li>
-                <li>Python</li>
-                <li>C++</li>
-                <li>React.js</li>
-                <li>React Native</li>
-                <li>AngularJS</li>
-                <li>Spring Boot</li>
-                <li>Apache Kafka</li>
-                <li>Docker Products</li>
-                <li>Google Cloud Platform (GCP)</li>
-                <li>SQL</li>
-                <li>JavaScript</li>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>MIPS Assembly</li>
-                <li>Microsoft Excel</li>
-            </ul>
-        </div>
-        <div id="resume" class="section">
-            <h2>Education</h2>
-            <p><strong>University of Puerto Rico, Mayagüez</strong> (Expected May 2025)</p>
-            <p>Bachelor of Science, Software Engineering</p>
-            <p>GPA: 3.69</p>
-            <p>Honors/Awards: Honor Roll 2020-2021, Microsoft Sustainability Hackathon 1st Place</p>
-            <p>Relevant Courses: Data Structures, Algorithms Analysis, Advanced Programming, Discrete Mathematics, Software Development, Google TechX SDE, Operating Systems, Database Systems, Software Requirements, Software Testing.</p>
-            <p><a href="assets/Resume_Sandy_Marrero.pdf">See Full Resume</a></p>
-        </div>
-        <div id="experience" class="section">
-            <h2>Experience</h2>
-            <ul class="experience-list">
-                <li>
-                    <strong>Software Engineer Intern, Google</strong> (May 2024 - Present)
-                    <p>Worked on the Android Google Search App and developed a toolbar using Kotlin.</p>
-                </li>
-                <li>
-                    <strong>Software Engineering Intern, BlackRock</strong> (June 2023 - August 2023)
-                    <p>Implemented a Notification Microservice for Aladdin LEO using Java and Spring Boot, which creates notifications based on Kafka events from an event bus. Created a library which takes Kafka events and creates notifications that are sent to a database and displayed in the notification UI.</p>
-                </li>
-                <li>
-                    <strong>Tech Exchange Scholar, Google</strong> (January 2023 - April 2023)
-                    <p>Created a full stack RESTful Wiki page in a 3-person team using Python, Flask, Google Cloud, and PyTest. Implemented the Google Cloud Buckets connection and the media upload feature for the Wiki page.</p>
-                </li>
-                <li>
-                    <strong>Software Developer, UPRM SAE Aero Design Team</strong> (May 2022 - January 2023)
-                    <p>Maintained and kept the team website up to date with the latest awards, sponsors, and team members using Angular.</p>
-                </li>
-                <li>
-                    <strong>Marketing Associate, IEEE Computer Society Student Branch Chapter - Mayaguez</strong> (November 2022 - December 2023)
-                    <p>Collaborated in the creation and dissemination of social media posts, contributing to increased online visibility and user interaction. Assisted in recruiting new members and encouraged participation in activities.</p>
-                </li>
-                <li>
-                    <strong>Programming Tutor, Freelance</strong> (August 2021 - Present)
-                    <p>Provided tutoring services for CS students facing difficulties in courses, improved their performance through extra labs, mini assignments, and one-on-one meetings throughout the semester. Used C++ primarily.</p>
-                </li>
-                <li>
-                    <strong>Programming Mentor, Advanced Programming Lab</strong> (January 2022 - Present)
-                    <p>Assisted the lab T.A. in providing the class laboratory to 30+ students, engaged with the class, and provided support and clarification weekly throughout the semester.</p>
-                </li>
-                <li>
-                    <strong>Student Mentor, UPRM HACKS! Summer Camp</strong> (June 2022)
-                    <p>Served as a mentor for 60 high school students on a programming-focused summer camp. Introduced the participants to programming concepts and app development using MIT App Inventor. Led and presented the students on their opportunity to showcase their apps on the Demo Day.</p>
-                </li>
-            </ul>
-        </div>
-        <div id="research" class="section">
-            <h2>Research Experience</h2>
-            <ul class="experience-list">
-                <li>
-                    <strong>Undergraduate Researcher, University of Puerto Rico-Mayaguez</strong> (August 2022 - Present)
-                    <p>Developing a network of embedded systems capable of sensing grid failures and deciding how to reroute power in our electric grid in the case of a natural disaster. Worked on Docker containers, identifying the needs of our system to be, containerizing services in order to improve deployment and facilitating changes in our Single Board Computers.</p>
-                </li>
-            </ul>
-        </div>
-        <div id="volunteer" class="section">
-            <h2>Volunteer Experience</h2>
-            <ul class="experience-list">
-                <li>
-                    <strong>Hydroponics IOT, Volunteer Developer</strong> (August 2022 - December 2022)
-                    <p>Assisted in the planning and initial non-functional components of an IOT dashboard for use in hydroponic systems using Figma and React.</p>
-                </li>
-                <li>
-                    <strong>UPRM Open House, Volunteer</strong> (November 2022)
-                    <p>Collaborated during the presentation of the Computer Science of Engineering Department in the open house, talked with parents and high school students about Computer Science and the UPRM offerings.</p>
-                </li>
-                <li>
-                    <strong>Dance and Art Camp (EMBAE), Volunteer Recreational Leader</strong> (June 2019 - August 2019)
-                    <p>Took care of 15 elementary school students in an arts summer camp, provided assistance to the teachers, helped distribute food, and provided support for the management of the camp.</p>
-                </li>
-                <li>
-                    <strong>Hurricane Maria Shelter, Volunteer Helper</strong> (September 2017 - November 2017)
-                    <p>Assisted in the shelter during the disaster and its recovery, helped distribute the food and drinks to the refugees.</p>
-                </li>
-            </ul>
-        </div>
-        <div id="portfolio" class="section">
-            <h2>Portfolio</h2>
-            <h3>Class Projects</h3>
-            <ul class="projects-list">
-                <li>
-                    <img src="assets/img/p1.jpg" alt="Galaga">
-                    <strong>Galaga:</strong> Added features of the original game, such as enemies, attacks, and spawning.
-                </li>
-                <li>
-                    <img src="assets/img/p2.jpg" alt="Pac-Man">
-                    <strong>Pac-Man:</strong> Added ghosts and their movements, fruits, the big dot, and the power-up state.
-                </li>
-                <li>
-                    <img src="assets/img/p3.jpg" alt="The Legend of Zelda">
-                    <strong>The Legend of Zelda:</strong> Added the sword alongside an attack animation, a health indicator, and a working and moving enemy.
-                </li>
-                <li>
-                    <img src="assets/img/p4.png" alt="Round Robin Scheduler">
-                    <strong>Round Robin Scheduler:</strong> Created a basic RRS using Circular Linked List to see the functionality and understand it.
-                </li>
-            </ul>
-        </div>
-        <div id="contact" class="section">
-            <h2>Feel Free to Contact Me! :)</h2>
-            <p>Email: sandy.marrero@upr.edu</p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/sandy-marrero-hern%C3%A1ndez/" style="color: #3b5998;">Sandy Marrero Hernandez</a></p>
-            <p>GitHub: <a href="https://github.com/sandy-marrero" style="color: #3b5998;">sandy-marrero</a></p>
-        </div>
+      </div>
+    </noscript>
+
+    <!-- Classic 2-Column Profile Architecture -->
+    <div class="profile-grid">
+      <!-- Left Sticky Info Rail -->
+      <aside class="sidebar" aria-label="Profile overview">
+        <section class="fb-box">
+          <div class="fb-box-header">
+            <h2 class="fb-box-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+              Intro
+            </h2>
+            <span class="fb-box-meta">Info</span>
+          </div>
+          <div class="fb-box-body">
+            <ul class="info-list" id="sidebar-info"></ul>
+          </div>
+        </section>
+
+        <section class="fb-box">
+          <div class="fb-box-header">
+            <h2 class="fb-box-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              Languages
+            </h2>
+            <span class="fb-box-meta">Click to filter</span>
+          </div>
+          <div class="fb-box-body">
+            <div class="stack-pills" id="sidebar-core-stack"></div>
+          </div>
+        </section>
+
+        <section class="fb-box sidebar-connect">
+          <div class="fb-box-header">
+            <h2 class="fb-box-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+              Links &amp; Contact
+            </h2>
+          </div>
+          <div class="fb-box-body">
+            <div class="connect-list" id="sidebar-connect"></div>
+          </div>
+        </section>
+      </aside>
+
+      <!-- Right Main Wall Feed -->
+      <div class="wall">
+        <!-- About -->
+        <section class="fb-box" id="section-about" data-tab-section="wall">
+          <div class="fb-box-header">
+            <h2 class="fb-box-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              About
+            </h2>
+            <span class="fb-box-meta">Overview</span>
+          </div>
+          <div class="fb-box-body">
+            <div class="about-prose" id="about-prose"></div>
+          </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="fb-box" id="section-experience" data-tab-section="wall experience">
+          <div class="fb-box-header">
+            <h2 class="fb-box-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+              Experience
+            </h2>
+            <span class="fb-box-meta" id="experience-meta">4 roles</span>
+          </div>
+          <div class="fb-box-body">
+            <div class="exp-list" id="experience-list"></div>
+          </div>
+        </section>
+
+        <!-- Skills -->
+        <section class="fb-box" id="section-skills" data-tab-section="wall skills">
+          <div class="fb-box-header">
+            <h2 class="fb-box-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+              Skills
+            </h2>
+            <span class="fb-box-meta" id="skills-meta">10 skills</span>
+          </div>
+          <div class="fb-box-body">
+            <div class="skill-filters" id="skill-filters" role="group" aria-label="Filter skills by category"></div>
+            <div class="skills-grid" id="skills-grid"></div>
+          </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="fb-box" id="section-projects" data-tab-section="wall projects">
+          <div class="fb-box-header">
+            <h2 class="fb-box-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              Projects
+            </h2>
+            <span class="fb-box-meta" id="projects-meta">2 projects</span>
+          </div>
+          <div class="fb-box-body">
+            <div class="featured-projects-grid" id="featured-projects-grid"></div>
+          </div>
+        </section>
+
+        <!-- Education -->
+        <section class="fb-box" id="section-education" data-tab-section="wall education">
+          <div class="fb-box-header">
+            <h2 class="fb-box-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>
+              Education
+            </h2>
+            <span class="fb-box-meta">Class of 2025</span>
+          </div>
+          <div class="fb-box-body">
+            <div class="edu-list" id="education-list"></div>
+          </div>
+        </section>
+      </div>
     </div>
-    <div class="footer">
-    </div>
-    <script>
-        const menuToggle = document.querySelector('.menu-toggle');
-        const menu = document.querySelector('.menu');
-        menuToggle.addEventListener('click', () => {
-            menu.classList.toggle('active');
-        });
-    </script>
+  </main>
+
+  <footer class="site-footer">
+    <span>Sandy Marrero Hernández</span>
+    <span>Classic Profile Layout · HTML / CSS / ES Modules</span>
+  </footer>
+
+  <!-- Copy Confirmation Toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script type="module" src="js/app.js"></script>
 </body>
 </html>
